@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>PROX-LP by tajanthan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">PROX-LP</h1>
+      <h2 class="project-tagline"><strong>Efficient Linear Programming for Dense CRFs</strong></br>
+      Thalaiyasingam Ajanthan, Alban Desmaison, Rudy Bunel, Mathieu Salzmann, Philip H.S. Torr, and M. Pawan Kumar</h2>
+      <a href="docs/lpdensecrf.pdf" class="btn">pdf</a>
+      <!--<a href="docs/memf_poster.pdf" class="btn">poster</a>-->
+      <a href="https://github.com/oval-group/DenseCRF" class="btn">code</a>      
+    </section>
+
+    <section class="main-content">
+      
+
+<h2 id="abstract">Abstract</h2>
+<p>The fully connected conditional random field (CRF) with Gaussian pairwise potentials has proven popular and effective for multi-class semantic segmentation. While the energy of a dense CRF can be minimized accurately using a linear programming (LP) relaxation, the state-of-the-art algorithm is too slow to be useful in practice. To alleviate this deficiency, we introduce an efficient LP minimization algorithm for dense CRFs. To this end, we develop a proximal minimization framework, where the dual of each proximal problem is optimized via block coordinate descent. We show that each block of variables can be efficiently optimized. Specifically, for one block, the problem decomposes into significantly smaller subproblems, each of which is defined over a single pixel. For the other block, the problem is optimized via conditional gradient descent. This has two advantages: 1) the conditional gradient can be computed in a time linear in the number of pixels and labels; and 2) the optimal step size can be computed analytically. Our experiments on standard datasets provide compelling evidence that our approach outperforms all existing baselines including the previous LP based approach for dense CRFs.</p>
+<h2 id="publication">Publication</h2>
+<p>Efficient Linear Programming for Dense CRFs.<br />
+<strong>Thalaiyasingam Ajanthan</strong>, Alban Desmaison, Rudy Bunel, Mathieu Salzmann, Philip H.S. Torr, and M. Pawan Kumar.<br />
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR), July 2017.</p>
+<p>[<a href="docs/lpdensecrf.pdf" title="pdf">pdf</a>] 
+[<a href="docs/lpdensecrf_supp.pdf" title="supp">supplementary</a>]
+[<a href="https://arxiv.org/abs/1611.09718" title="arxiv">arxiv</a>] 
+[<a href="docs/lpdensecrf_poster.pdf" title="poster">poster</a>]
+[<a href="https://github.com/oval-group/DenseCRF" title="code">code</a>] 
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://tajanthan.github.io/#research">
+                User profile</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
