@@ -4,448 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. T. Mukunthan – Senior Lecturer, University of Jaffna</title>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --navy: #0f2341;
-      --blue: #1a4a8a;
-      --sky: #2e7bbf;
-      --accent: #c8922a;
-      --light: #f4f7fb;
-      --white: #ffffff;
-      --text: #1e2a3a;
-      --muted: #6b7a8d;
-      --border: #dde3ed;
-    }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    /* ── TOP BAR ── */
-    .topbar {
-      background: var(--navy);
-      color: rgba(255,255,255,0.75);
-      font-size: 0.78rem;
-      letter-spacing: 0.03em;
-      padding: 6px 0;
-    }
-    .topbar-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .topbar a { color: rgba(255,255,255,0.75); text-decoration: none; }
-    .topbar a:hover { color: #fff; }
-
-    /* ── NAVBAR ── */
-    nav {
-      background: var(--white);
-      border-bottom: 3px solid var(--sky);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .nav-logo {
-      font-family: 'Crimson Pro', serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--navy);
-      padding: 14px 0;
-      text-decoration: none;
-      letter-spacing: 0.01em;
-    }
-    .nav-logo span { color: var(--sky); }
-    .nav-links {
-      display: flex;
-      gap: 4px;
-      list-style: none;
-    }
-    .nav-links a {
-      display: block;
-      padding: 18px 14px;
-      font-size: 0.83rem;
-      font-weight: 500;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-      border-bottom: 3px solid transparent;
-      margin-bottom: -3px;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--sky);
-      border-bottom-color: var(--sky);
-    }
-
-    /* ── HERO / PROFILE ── */
-    .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, #163563 50%, var(--blue) 100%);
-      color: white;
-      padding: 60px 24px 0;
-      overflow: hidden;
-      position: relative;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle at 80% 20%, rgba(46,123,191,0.2) 0%, transparent 60%),
-                        radial-gradient(circle at 10% 80%, rgba(200,146,42,0.1) 0%, transparent 50%);
-    }
-    .hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: flex-end;
-      gap: 48px;
-      position: relative;
-    }
-    .hero-photo {
-      flex-shrink: 0;
-      width: 190px;
-      height: 230px;
-      border-radius: 8px 8px 0 0;
-      overflow: hidden;
-      border: 4px solid rgba(255,255,255,0.15);
-      border-bottom: none;
-      background: linear-gradient(180deg, #2e4a70, #1a3558);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      align-self: flex-end;
-    }
-    .hero-photo-placeholder {
-      font-size: 80px;
-      opacity: 0.4;
-    }
-    .hero-info {
-      padding-bottom: 36px;
-      flex: 1;
-    }
-    .hero-dept {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-    .hero-name {
-      font-family: 'Crimson Pro', serif;
-      font-size: 2.8rem;
-      font-weight: 300;
-      line-height: 1.15;
-      margin-bottom: 6px;
-    }
-    .hero-name strong { font-weight: 600; }
-    .hero-title {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 16px;
-    }
-    .hero-quals {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.55);
-      font-style: italic;
-      margin-bottom: 20px;
-      font-family: 'Crimson Pro', serif;
-      font-size: 0.95rem;
-    }
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-    .hero-tag {
-      background: rgba(46,123,191,0.25);
-      border: 1px solid rgba(46,123,191,0.4);
-      border-radius: 20px;
-      padding: 4px 14px;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.85);
-    }
-    .hero-contacts {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .hero-contacts a {
-      color: rgba(255,255,255,0.75);
-      font-size: 0.82rem;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .hero-contacts a:hover { color: #fff; }
-
-    /* ── TAB BAR ── */
-    .tabs-bar {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 57px;
-      z-index: 90;
-    }
-    .tabs-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      gap: 0;
-      overflow-x: auto;
-    }
-    .tab-btn {
-      flex-shrink: 0;
-      padding: 16px 22px;
-      font-size: 0.83rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border: none;
-      background: none;
-      cursor: pointer;
-      border-bottom: 3px solid transparent;
-      margin-bottom: -1px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .tab-btn.active, .tab-btn:hover {
-      color: var(--sky);
-      border-bottom-color: var(--sky);
-    }
-
-    /* ── MAIN CONTENT ── */
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
-    }
-
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-
-    /* ── SECTION HEADING ── */
-    .section-heading {
-      font-family: 'Crimson Pro', serif;
-      font-size: 1.65rem;
-      font-weight: 600;
-      color: var(--navy);
-      border-left: 4px solid var(--sky);
-      padding-left: 16px;
-      margin: 40px 0 20px;
-    }
-    .section-heading:first-child { margin-top: 0; }
-
-    .subsection-heading {
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--sky);
-      margin: 32px 0 14px;
-    }
-
-    /* ── CARDS ── */
-    .card {
-      background: var(--white);
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      padding: 28px 32px;
-      margin-bottom: 20px;
-    }
-
-    /* ── PUBLICATION ITEM ── */
-    .pub-item {
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
-      line-height: 1.65;
-    }
-    .pub-item:last-child { border-bottom: none; }
-    .pub-item .pub-title {
-      font-weight: 500;
-      color: var(--navy);
-    }
-    .pub-item .pub-authors { color: var(--muted); font-size: 0.85rem; }
-    .pub-item .pub-venue {
-      font-style: italic;
-      color: var(--sky);
-      font-size: 0.85rem;
-    }
-    .pub-item .pub-doi {
-      font-size: 0.78rem;
-      color: var(--accent);
-    }
-
-    /* ── GRID ── */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    @media (max-width: 700px) {
-      .grid-2 { grid-template-columns: 1fr; }
-    }
-
-    /* ── EXPERIENCE ROW ── */
-    .exp-row {
-      display: flex;
-      gap: 20px;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .exp-row:last-child { border-bottom: none; }
-    .exp-date {
-      flex-shrink: 0;
-      width: 130px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--accent);
-      padding-top: 2px;
-    }
-    .exp-body h4 {
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 2px;
-    }
-    .exp-body p {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    /* ── LIST ── */
-    .styled-list {
-      list-style: none;
-      padding: 0;
-    }
-    .styled-list li {
-      padding: 7px 0 7px 20px;
-      position: relative;
-      font-size: 0.88rem;
-      border-bottom: 1px dashed var(--border);
-    }
-    .styled-list li:last-child { border-bottom: none; }
-    .styled-list li::before {
-      content: '';
-      position: absolute;
-      left: 4px;
-      top: 16px;
-      width: 6px;
-      height: 6px;
-      background: var(--sky);
-      border-radius: 50%;
-    }
-
-    /* ── GRANT/AWARD CARD ── */
-    .award-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--accent);
-      border-radius: 0 8px 8px 0;
-      padding: 16px 20px;
-      margin-bottom: 12px;
-      font-size: 0.88rem;
-    }
-    .award-card h4 {
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-    .award-card p { color: var(--muted); }
-
-    /* ── BADGE ── */
-    .badge {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 12px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-right: 6px;
-    }
-    .badge-blue { background: #dbeeff; color: var(--sky); }
-    .badge-gold { background: #fff2db; color: #9a6e1a; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.55);
-      text-align: center;
-      padding: 28px 24px;
-      font-size: 0.8rem;
-    }
-    footer a { color: rgba(255,255,255,0.7); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .hero-inner { flex-direction: column; align-items: flex-start; }
-      .hero-photo { width: 130px; height: 160px; align-self: unset; }
-      .hero-name { font-size: 2rem; }
-      .nav-links { display: none; }
-      .exp-date { width: 90px; font-size: 0.72rem; }
-    }
-  </style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="topbar-inner">
-    <span>📍 Department of Electrical and Electronic Engineering, Faculty of Engineering, University of Jaffna</span>
-    <a href="mailto:mukunthan@eng.jfn.ac.lk">mukunthan@eng.jfn.ac.lk</a>
-  </div>
-</div>
-
-<!-- NAV -->
+<!-- ── NAVBAR ── -->
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="#">Dr. T. <span>Mukunthan</span></a>
     <ul class="nav-links">
-      <li><a href="#" onclick="switchTab('brief')" class="active" id="nav-brief">Overview</a></li>
-      <li><a href="#" onclick="switchTab('publications')" id="nav-publications">Publications</a></li>
-      <li><a href="#" onclick="switchTab('teaching')" id="nav-teaching">Teaching</a></li>
-      <li><a href="#" onclick="switchTab('professional')" id="nav-professional">Professional</a></li>
-      <li><a href="#" onclick="switchTab('admin')" id="nav-admin">Leadership</a></li>
-      <li><a href="#" onclick="switchTab('grants')" id="nav-grants">Grants & Awards</a></li>
+      <li><a href="#" onclick="return switchTab('brief')"        id="nav-brief"        class="active">Overview</a></li>
+      <li><a href="#" onclick="return switchTab('publications')" id="nav-publications">Publications</a></li>
+      <li><a href="#" onclick="return switchTab('teaching')"     id="nav-teaching">Teaching</a></li>
+      <li><a href="#" onclick="return switchTab('professional')" id="nav-professional">Professional</a></li>
+      <li><a href="#" onclick="return switchTab('admin')"        id="nav-admin">Leadership</a></li>
+      <li><a href="#" onclick="return switchTab('grants')"       id="nav-grants">Grants &amp; Awards</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ── HERO ── -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-photo">
-      <span class="hero-photo-placeholder">👤</span>
-    </div>
+     <div class="hero-photo
+	 <img src="images/Mukun.png" alt="Dr. T. Mukunthan">
+	 </div>
+	 
     <div class="hero-info">
-      <div class="hero-dept">Faculty of Engineering · University of Jaffna</div>
       <div class="hero-name">Dr. <strong>Tharmakulasingam</strong><br>Mukunthan</div>
       <div class="hero-title">Senior Lecturer Grade II &nbsp;·&nbsp; Department of Electrical and Electronic Engineering</div>
       <div class="hero-quals">B.Sc.Eng.(Hons)(Moratuwa) &nbsp;·&nbsp; PhD (Surrey, UK) &nbsp;·&nbsp; AMIE(SL) &nbsp;·&nbsp; MIEEE</div>
@@ -464,51 +56,68 @@
   </div>
 </div>
 
-<!-- TAB BAR -->
+<!-- ── TAB BAR ── -->
 <div class="tabs-bar">
   <div class="tabs-inner">
-    <button class="tab-btn active" id="tab-brief" onclick="switchTab('brief')">Overview</button>
-    <button class="tab-btn" id="tab-publications" onclick="switchTab('publications')">Publications</button>
-    <button class="tab-btn" id="tab-teaching" onclick="switchTab('teaching')">Teaching</button>
-    <button class="tab-btn" id="tab-professional" onclick="switchTab('professional')">Professional</button>
-    <button class="tab-btn" id="tab-admin" onclick="switchTab('admin')">Leadership</button>
-    <button class="tab-btn" id="tab-grants" onclick="switchTab('grants')">Grants & Awards</button>
+    <button class="tab-btn active" id="tab-brief"        onclick="switchTab('brief')">Overview</button>
+    <button class="tab-btn"        id="tab-publications" onclick="switchTab('publications')">Publications</button>
+    <button class="tab-btn"        id="tab-teaching"     onclick="switchTab('teaching')">Teaching</button>
+    <button class="tab-btn"        id="tab-professional" onclick="switchTab('professional')">Professional</button>
+    <button class="tab-btn"        id="tab-admin"        onclick="switchTab('admin')">Leadership</button>
+    <button class="tab-btn"        id="tab-grants"       onclick="switchTab('grants')">Grants &amp; Awards</button>
   </div>
 </div>
 
-<!-- MAIN -->
+<!-- ── MAIN CONTENT ── -->
 <main>
 
-  <!-- ── BRIEF ── -->
+  <!-- ════════════════════════════════════ BRIEF ════════ -->
   <div class="tab-panel active" id="panel-brief">
+
     <div class="card">
       <h2 class="section-heading" style="margin-top:0">Biography</h2>
-      <p style="font-size:0.95rem; margin-bottom: 16px;">Dr T. Mukunthan received his B.Sc.Eng(Hons) in Electronic and Telecommunication Engineering from the University of Moratuwa in 2014, and his PhD in Vision, Speech, and Signal Processing from the University of Surrey, United Kingdom in 2023. He is currently serving as a Senior Lecturer (Gr II) at the Department of Electrical and Electronic Engineering, Faculty of Engineering, University of Jaffna.</p>
-      <p style="font-size:0.95rem; margin-bottom: 16px;">His research lies at the intersection of Explainable Artificial Intelligence (XAI), AIoT, and intelligent systems, with a strong application focus on healthcare diagnostics, smart grids and renewable energy systems. His work emphasises trustworthy AI, data-driven decision-making, and digital transformation of critical infrastructure.</p>
-      <p style="font-size:0.95rem;">He has contributed as a consultant to several projects, including serving as an AI and Digital infrastructure consultant to the Asian Development Bank (ADB) on an AI-powered microgrid project. Before entering academia, he spent more than 4 years at the London Stock Exchange Group, working on a high-performance, low-latency exchange system, gaining strong expertise in scalable software architectures and real-time systems.</p>
+      <p style="font-size:0.95rem; margin-bottom:16px;">
+        Dr T. Mukunthan received his B.Sc.Eng(Hons) in Electronic and Telecommunication Engineering from the
+        University of Moratuwa in 2014, and his PhD in Vision, Speech, and Signal Processing from the
+        University of Surrey, United Kingdom in 2023. He is currently serving as a Senior Lecturer (Gr II)
+        at the Department of Electrical and Electronic Engineering, Faculty of Engineering, University of Jaffna.
+      </p>
+      <p style="font-size:0.95rem; margin-bottom:16px;">
+        His research lies at the intersection of Explainable Artificial Intelligence (XAI), AIoT, and
+        intelligent systems, with a strong application focus on healthcare diagnostics, smart grids and
+        renewable energy systems. His work emphasises trustworthy AI, data-driven decision-making, and
+        digital transformation of critical infrastructure.
+      </p>
+      <p style="font-size:0.95rem;">
+        He has contributed as a consultant to several projects, including serving as an AI and Digital
+        infrastructure consultant to the Asian Development Bank (ADB) on an AI-powered microgrid project.
+        Before entering academia, he spent more than 4 years at the London Stock Exchange Group, working on
+        a high-performance, low-latency exchange system, gaining strong expertise in scalable software
+        architectures and real-time systems.
+      </p>
     </div>
 
     <h2 class="section-heading">Research Interests</h2>
     <div class="grid-2">
-      <div class="card" style="border-top: 3px solid var(--sky);">
-        <div style="font-size:1.6rem; margin-bottom:10px;">🔍</div>
-        <h3 style="font-size:1rem; color:var(--navy); margin-bottom:6px;">Explainable Artificial Intelligence (XAI)</h3>
-        <p style="font-size:0.85rem; color:var(--muted);">Trustworthy AI with interpretable models for critical decision-making in health and infrastructure.</p>
+      <div class="card interest">
+        <div class="icon">🔍</div>
+        <h3>Explainable Artificial Intelligence (XAI)</h3>
+        <p>Trustworthy AI with interpretable models for critical decision-making in health and infrastructure.</p>
       </div>
-      <div class="card" style="border-top: 3px solid var(--sky);">
-        <div style="font-size:1.6rem; margin-bottom:10px;">🏥</div>
-        <h3 style="font-size:1rem; color:var(--navy); margin-bottom:6px;">Digital Health</h3>
-        <p style="font-size:0.85rem; color:var(--muted);">AI-assisted diagnostics, antimicrobial resistance prediction, point-of-care devices.</p>
+      <div class="card interest">
+        <div class="icon">🏥</div>
+        <h3>Digital Health</h3>
+        <p>AI-assisted diagnostics, antimicrobial resistance prediction, point-of-care devices.</p>
       </div>
-      <div class="card" style="border-top: 3px solid var(--sky);">
-        <div style="font-size:1.6rem; margin-bottom:10px;">🌐</div>
-        <h3 style="font-size:1rem; color:var(--navy); margin-bottom:6px;">AI & IoT Intelligent Systems</h3>
-        <p style="font-size:0.85rem; color:var(--muted);">AIoT architectures for real-time sensing, edge AI, smart monitoring and automation.</p>
+      <div class="card interest">
+        <div class="icon">🌐</div>
+        <h3>AI &amp; IoT Intelligent Systems</h3>
+        <p>AIoT architectures for real-time sensing, edge AI, smart monitoring and automation.</p>
       </div>
-      <div class="card" style="border-top: 3px solid var(--sky);">
-        <div style="font-size:1.6rem; margin-bottom:10px;">⚡</div>
-        <h3 style="font-size:1rem; color:var(--navy); margin-bottom:6px;">AI-Powered Energy Systems</h3>
-        <p style="font-size:0.85rem; color:var(--muted);">Predictive load forecasting, renewable energy management, intelligent smart grid operations.</p>
+      <div class="card interest">
+        <div class="icon">⚡</div>
+        <h3>AI-Powered Energy Systems</h3>
+        <p>Predictive load forecasting, renewable energy management, intelligent smart grid operations.</p>
       </div>
     </div>
 
@@ -557,9 +166,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div><!-- /panel-brief -->
 
-  <!-- ── PUBLICATIONS ── -->
+  <!-- ════════════════════════════════════ PUBLICATIONS ════ -->
   <div class="tab-panel" id="panel-publications">
 
     <div class="subsection-heading">📚 Book Chapter</div>
@@ -715,9 +324,9 @@
         <p class="pub-venue">The Early Detection of Cancer Conference, CRUK, 2023</p>
       </div>
     </div>
-  </div>
+  </div><!-- /panel-publications -->
 
-  <!-- ── TEACHING ── -->
+  <!-- ════════════════════════════════════ TEACHING ════════ -->
   <div class="tab-panel" id="panel-teaching">
 
     <h2 class="section-heading">University of Jaffna</h2>
@@ -734,7 +343,7 @@
         </ul>
       </div>
       <div class="card">
-        <div class="subsection-heading" style="margin-top:0">Design & Project Coordination</div>
+        <div class="subsection-heading" style="margin-top:0">Design &amp; Project Coordination</div>
         <ul class="styled-list">
           <li>EEE Research Project I, II, III (2024–Present)</li>
           <li>EEE Design Proficiency (2023–Present)</li>
@@ -801,12 +410,12 @@
         <li>Resource Person for free industrial AIoT Bootcamp by Senzmate – Generative AI and LLMs in Practice: From Theory to Applications (2024)</li>
       </ul>
     </div>
-  </div>
+  </div><!-- /panel-teaching -->
 
-  <!-- ── PROFESSIONAL ── -->
+  <!-- ════════════════════════════════════ PROFESSIONAL ═══ -->
   <div class="tab-panel" id="panel-professional">
 
-    <h2 class="section-heading">Consulting & Advisory</h2>
+    <h2 class="section-heading">Consulting &amp; Advisory</h2>
     <div class="card">
       <div class="exp-row">
         <div class="exp-date">2024–2026</div>
@@ -873,9 +482,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div><!-- /panel-professional -->
 
-  <!-- ── ADMIN ── -->
+  <!-- ════════════════════════════════════ ADMIN ═══════════ -->
   <div class="tab-panel" id="panel-admin">
 
     <h2 class="section-heading">University of Jaffna – Administrative Roles</h2>
@@ -897,7 +506,7 @@
       </ul>
     </div>
 
-    <h2 class="section-heading">Conferences & Events</h2>
+    <h2 class="section-heading">Conferences &amp; Events</h2>
     <div class="card">
       <ul class="styled-list">
         <li>Editor, International Conference on Engineering, University of Jaffna, 2026</li>
@@ -918,9 +527,9 @@
         <li>Reviewer: IEEE Journal of Biomedical and Health Informatics, IEEE Access, IET Biometrics Journal</li>
       </ul>
     </div>
-  </div>
+  </div><!-- /panel-admin -->
 
-  <!-- ── GRANTS ── -->
+  <!-- ════════════════════════════════════ GRANTS ══════════ -->
   <div class="tab-panel" id="panel-grants">
 
     <h2 class="section-heading">Research Grants</h2>
@@ -929,101 +538,79 @@
       <h4>ERASMUS+ Grant – ENSURE Project <span class="badge badge-blue">EUR 61,579</span></h4>
       <p>Project Coordinator for "Empowering NetZero Skills for Sri Lanka's Sustainable and Resilient Future (ENSURE)" in collaboration with seven national institutions and four international universities. Dec 2025 – Dec 2027.</p>
     </div>
-
     <div class="award-card">
       <h4>NSF Grant – Portable Emission Measurement Device <span class="badge badge-blue">LKR 4.8 Million</span></h4>
       <p>Co-PI for development of a portable emission measurement device. Jan 2026 – Dec 2026.</p>
     </div>
-
     <div class="award-card">
-      <h4>UBL Research Grant – IoT Footfall & Facial Recognition (RDC/AHEAD/RA3/JFN/UBL/CA/25) <span class="badge badge-blue">LKR 500,000</span></h4>
+      <h4>UBL Research Grant – IoT Footfall &amp; Facial Recognition (RDC/AHEAD/RA3/JFN/UBL/CA/25) <span class="badge badge-blue">LKR 500,000</span></h4>
       <p>IoT-powered footfall and advanced facial recognition system with edge-AI deployment and prototype validation.</p>
     </div>
-
     <div class="award-card">
       <h4>UBL Research Grant – Explainable AI for Disease Prediction (RDC/AHEAD/RA3/JFN/UBL/CA/14) <span class="badge badge-blue">LKR 400,000</span></h4>
       <p>Explainable AI framework for disease prediction with advanced model interpretability techniques.</p>
     </div>
 
-    <h2 class="section-heading">Awards & Recognition</h2>
+    <h2 class="section-heading">Awards &amp; Recognition</h2>
 
     <div class="subsection-heading">Individual</div>
-
     <div class="award-card">
-      <h4>University of Surrey Studentship: CVSSP & Zoetis <span class="badge badge-gold">Full Scholarship</span></h4>
+      <h4>University of Surrey Studentship: CVSSP &amp; Zoetis <span class="badge badge-gold">Full Scholarship</span></h4>
       <p>Successfully secured a full scholarship with tuition fee and stipend to carry out PhD based on proposal. Jan 2019 – Mar 2022.</p>
     </div>
-
     <div class="award-card">
       <h4>Scholarship – Conception X Program <span class="badge badge-gold">Scholarship</span></h4>
       <p>Competitive deep-tech entrepreneurship program from leading UK PhD programs. Validated AI-based disease prediction tools, conducted market analysis, and developed startup business models. Mar 2022 – Nov 2022.</p>
     </div>
-
     <div class="award-card">
       <h4>Dialog Merit Scholarship for Academic Excellence <span class="badge badge-gold">1st in Jaffna District</span></h4>
       <p>Ranked 1st in Jaffna District for GCE Advanced Level Mathematics Stream 2008. August 2009.</p>
     </div>
-
     <div class="award-card">
       <h4>University Honours for Athletics – SLUG 2013</h4>
       <p>Represented the University of Moratuwa in Javelin Throw at SLUG-2013, where the university emerged as the overall champion.</p>
     </div>
 
     <div class="subsection-heading">Project Team Awards</div>
-
     <div class="award-card">
-      <h4>Winner – MIT Hack4theFuture (AI & Future of Healthcare track) <span class="badge badge-gold">Winner</span></h4>
+      <h4>Winner – MIT Hack4theFuture (AI &amp; Future of Healthcare track) <span class="badge badge-gold">Winner</span></h4>
       <p>Diabetic Retinopathy prediction product for personalised home diagnosis was selected as the winner. Nov 2020.</p>
     </div>
-
     <div class="award-card">
       <h4>Second Runner-up – McGinnis Venture Competition <span class="badge badge-gold">2nd Runner-up</span></h4>
       <p>E-carebetics prototype for predicting Retinopathy using XAI model, mobile app, and easy-to-build fundus camera with innovative illumination. Mar 2022.</p>
     </div>
 
     <div class="subsection-heading">Supervised Student Awards</div>
-
     <div class="award-card">
       <h4>IoT System for Indoor Air Quality Monitoring <span class="badge badge-gold">1st Place</span></h4>
       <p>First place in the IEEE IAS Undergraduate Student Design Contest.</p>
     </div>
-
     <div class="award-card">
       <h4>Intelligent Dental Care Kit <span class="badge badge-gold">Bronze</span></h4>
       <p>Bronze medal at the IEEE R10 HTC 2024 Innovation Challenge.</p>
     </div>
-
     <div class="award-card">
       <h4>AIoT Driven Green House Monitoring and Predictive Analysis</h4>
       <p>Selected to showcase in the Sri Lankan AI Expo under the University Category.</p>
     </div>
-  </div>
+
+  </div><!-- /panel-grants -->
 
 </main>
 
+<!-- ── FOOTER ── -->
 <footer>
   <p>Dr. Tharmakulasingam Mukunthan &nbsp;·&nbsp; Department of Electrical and Electronic Engineering, Faculty of Engineering, University of Jaffna</p>
-  <p style="margin-top:6px;"><a href="mailto:mukunthan@eng.jfn.ac.lk">mukunthan@eng.jfn.ac.lk</a> &nbsp;·&nbsp; <a href="https://www.eng.jfn.ac.lk" target="_blank">www.eng.jfn.ac.lk</a></p>
+  <p style="margin-top:6px;">
+    <a href="mailto:mukunthan@eng.jfn.ac.lk">mukunthan@eng.jfn.ac.lk</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.eng.jfn.ac.lk" target="_blank">www.eng.jfn.ac.lk</a>
+  </p>
 </footer>
 
-<script>
-  function switchTab(name) {
-    // Hide all panels and deactivate buttons
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-
-    // Show selected
-    document.getElementById('panel-' + name).classList.add('active');
-    document.getElementById('tab-' + name).classList.add('active');
-    const navEl = document.getElementById('nav-' + name);
-    if (navEl) navEl.classList.add('active');
-
-    // Smooth scroll to top of main
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    return false;
-  }
-</script>
+<!-- JavaScript -->
+<script src="assets/main.js"></script>
 
 </body>
 </html>
