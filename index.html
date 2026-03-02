@@ -1,235 +1,1029 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Dr Tharmakulasingam Mukunthan</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. T. Mukunthan – Senior Lecturer, University of Jaffna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0f2341;
+      --blue: #1a4a8a;
+      --sky: #2e7bbf;
+      --accent: #c8922a;
+      --light: #f4f7fb;
+      --white: #ffffff;
+      --text: #1e2a3a;
+      --muted: #6b7a8d;
+      --border: #dde3ed;
+    }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--navy);
+      color: rgba(255,255,255,0.75);
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      padding: 6px 0;
+    }
+    .topbar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .topbar a { color: rgba(255,255,255,0.75); text-decoration: none; }
+    .topbar a:hover { color: #fff; }
+
+    /* ── NAVBAR ── */
+    nav {
+      background: var(--white);
+      border-bottom: 3px solid var(--sky);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-logo {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy);
+      padding: 14px 0;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-logo span { color: var(--sky); }
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      display: block;
+      padding: 18px 14px;
+      font-size: 0.83rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -3px;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--sky);
+      border-bottom-color: var(--sky);
+    }
+
+    /* ── HERO / PROFILE ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #163563 50%, var(--blue) 100%);
+      color: white;
+      padding: 60px 24px 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 80% 20%, rgba(46,123,191,0.2) 0%, transparent 60%),
+                        radial-gradient(circle at 10% 80%, rgba(200,146,42,0.1) 0%, transparent 50%);
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      gap: 48px;
+      position: relative;
+    }
+    .hero-photo {
+      flex-shrink: 0;
+      width: 190px;
+      height: 230px;
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+      border: 4px solid rgba(255,255,255,0.15);
+      border-bottom: none;
+      background: linear-gradient(180deg, #2e4a70, #1a3558);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-end;
+    }
+    .hero-photo-placeholder {
+      font-size: 80px;
+      opacity: 0.4;
+    }
+    .hero-info {
+      padding-bottom: 36px;
+      flex: 1;
+    }
+    .hero-dept {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .hero-name {
+      font-family: 'Crimson Pro', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+    .hero-name strong { font-weight: 600; }
+    .hero-title {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 16px;
+    }
+    .hero-quals {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      font-style: italic;
+      margin-bottom: 20px;
+      font-family: 'Crimson Pro', serif;
+      font-size: 0.95rem;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .hero-tag {
+      background: rgba(46,123,191,0.25);
+      border: 1px solid rgba(46,123,191,0.4);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.85);
+    }
+    .hero-contacts {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-contacts a {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.82rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-contacts a:hover { color: #fff; }
+
+    /* ── TAB BAR ── */
+    .tabs-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 57px;
+      z-index: 90;
+    }
+    .tabs-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      flex-shrink: 0;
+      padding: 16px 22px;
+      font-size: 0.83rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: none;
+      background: none;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      color: var(--sky);
+      border-bottom-color: var(--sky);
+    }
+
+    /* ── MAIN CONTENT ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── SECTION HEADING ── */
+    .section-heading {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--navy);
+      border-left: 4px solid var(--sky);
+      padding-left: 16px;
+      margin: 40px 0 20px;
+    }
+    .section-heading:first-child { margin-top: 0; }
+
+    .subsection-heading {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--sky);
+      margin: 32px 0 14px;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--white);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    /* ── PUBLICATION ITEM ── */
+    .pub-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-item .pub-title {
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .pub-item .pub-authors { color: var(--muted); font-size: 0.85rem; }
+    .pub-item .pub-venue {
+      font-style: italic;
+      color: var(--sky);
+      font-size: 0.85rem;
+    }
+    .pub-item .pub-doi {
+      font-size: 0.78rem;
+      color: var(--accent);
+    }
+
+    /* ── GRID ── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 700px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    /* ── EXPERIENCE ROW ── */
+    .exp-row {
+      display: flex;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-row:last-child { border-bottom: none; }
+    .exp-date {
+      flex-shrink: 0;
+      width: 130px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      padding-top: 2px;
+    }
+    .exp-body h4 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .exp-body p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ── LIST ── */
+    .styled-list {
+      list-style: none;
+      padding: 0;
+    }
+    .styled-list li {
+      padding: 7px 0 7px 20px;
+      position: relative;
+      font-size: 0.88rem;
+      border-bottom: 1px dashed var(--border);
+    }
+    .styled-list li:last-child { border-bottom: none; }
+    .styled-list li::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 16px;
+      width: 6px;
+      height: 6px;
+      background: var(--sky);
+      border-radius: 50%;
+    }
+
+    /* ── GRANT/AWARD CARD ── */
+    .award-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      font-size: 0.88rem;
+    }
+    .award-card h4 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .award-card p { color: var(--muted); }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-right: 6px;
+    }
+    .badge-blue { background: #dbeeff; color: var(--sky); }
+    .badge-gold { background: #fff2db; color: #9a6e1a; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.8rem;
+    }
+    footer a { color: rgba(255,255,255,0.7); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero-inner { flex-direction: column; align-items: flex-start; }
+      .hero-photo { width: 130px; height: 160px; align-self: unset; }
+      .hero-name { font-size: 2rem; }
+      .nav-links { display: none; }
+      .exp-date { width: 90px; font-size: 0.72rem; }
+    }
+  </style>
+</head>
 <body>
 
-<div id="header">
-  <div class="top">
-    <div id="logo">
-      <span class="image avatar64"><img src="images/Mukun.png" alt="" /></span>
-      <h1 id="title">Dr. Tharmakulasingam Mukunthan</h1>
-      <p>Senior Lecturer Grade II</p>
-      <p>Department of Electrical and Electronic Engineering</p>
-      <p>B.Sc.Eng.(Hons)(Moratuwa), PhD (Surrey,UK), AMIE(SL), MIEEE</p>
-    </div>
-
-    <nav id="nav">
-      <ul>
-        <li><a href="#brief">Brief</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#teaching">Teaching & Supervision</a></li>
-        <li><a href="#consulting">Professional Engagement</a></li>
-        <li><a href="#leadership">Leadership</a></li>
-        <li><a href="#grants">Grants & Awards</a></li>
-      </ul>
-    </nav>
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>📍 Department of Electrical and Electronic Engineering, Faculty of Engineering, University of Jaffna</span>
+    <a href="mailto:mukunthan@eng.jfn.ac.lk">mukunthan@eng.jfn.ac.lk</a>
   </div>
 </div>
 
-<div id="main">
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">Dr. T. <span>Mukunthan</span></a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="switchTab('brief')" class="active" id="nav-brief">Overview</a></li>
+      <li><a href="#" onclick="switchTab('publications')" id="nav-publications">Publications</a></li>
+      <li><a href="#" onclick="switchTab('teaching')" id="nav-teaching">Teaching</a></li>
+      <li><a href="#" onclick="switchTab('professional')" id="nav-professional">Professional</a></li>
+      <li><a href="#" onclick="switchTab('admin')" id="nav-admin">Leadership</a></li>
+      <li><a href="#" onclick="switchTab('grants')" id="nav-grants">Grants & Awards</a></li>
+    </ul>
+  </div>
+</nav>
 
-<!-- Brief Section -->
-<section id="brief" class="two">
-<div class="container">
-<h2>Brief</h2>
-
-<p><strong>Research Interest:</strong> Explainable Artificial Intelligence, Digital Health, AI and IoT-driven Intelligent Systems and AI-powered Energy Systems.</p>
-
-<p>
-Dr T. Mukunthan received his B.Sc.Eng(Hons) in Electronic and Telecommunication Engineering 
-from the University of Moratuwa in 2014, and his PhD in Vision, Speech and Signal Processing 
-from the University of Surrey, United Kingdom in 2023.
-</p>
-
-<p>
-He is currently serving as a Senior Lecturer (Gr II) at the Department of Electrical and Electronic Engineering, 
-Faculty of Engineering, University of Jaffna.
-</p>
-
-<p>
-His research lies at the intersection of Explainable Artificial Intelligence (XAI), AIoT, and intelligent systems, 
-with a strong application focus on healthcare diagnostics, smart grids and renewable energy systems. 
-His work emphasises trustworthy AI, data-driven decision-making, and digital transformation of critical infrastructure.
-</p>
-
-<p>
-He has contributed as a consultant to several projects, including serving as an AI and Digital Infrastructure Consultant 
-to the Asian Development Bank (ADB) on an AI-powered microgrid project. Before entering academia, he spent more than 
-four years at the London Stock Exchange Group, working on high-performance, low-latency exchange systems, 
-gaining strong expertise in scalable software architectures and real-time systems.
-</p>
-
-</div>
-</section>
-
-<!-- Publications -->
-<section id="publications" class="two">
-<div class="container">
-
-<h2>Publications</h2>
-
-<h3>Journal Publications</h3>
-<ul>
-<li>TransAMR: An Interpretable Transformer Model for Accurate Prediction of Antimicrobial Resistance – IEEE Access, 2023.</li>
-<li>Explainable Deep Learning for Multilabel Classification of Antimicrobial Resistance – IEEE Access.</li>
-<li>Rectified Classifier Chains for Prediction of Antibiotic Resistance – IEEE/ACM TCBB.</li>
-<li>AI-Assisted Portable Low-Cost Device for Rapid Detection of SARS-CoV-2 – Electronics, 2021.</li>
-<li>Fusing CT Deep Learning, Radiomics & Immune Profiles for Lung Cancer Diagnosis – eBioMedicine, 2026.</li>
-<li>In Silico Drug Repurposing Pipeline for SARS-CoV-2 – Informatics in Medicine Unlocked, 2023.</li>
-<li>Blockchain-based Database Management System – Knowledge Engineering Review, 2020.</li>
-<li>ai-LAMP for Rapid SARS-CoV-2 Detection – Viruses, 2020.</li>
-<li>VIDIIA Hunter Diagnostic Platform – Frontiers in Molecular Biosciences, 2023.</li>
-<li>Portable Remote Medical Consultation System – Rajshahi University Journal, 2015.</li>
-<li>Environmental Factors & Antibiotic Resistance Mapping – Environment International, 2025.</li>
-</ul>
-
-<h3>Selected Conference Papers</h3>
-<ul>
-<li>Backward Feature Elimination for Pathogen Recognition – IEEE ICCE 2020.</li>
-<li>Improved Pathogen Recognition using Weighted kNN – 2019.</li>
-<li>Blockchain-based DBMS for IoT Applications – 2018.</li>
-<li>NB-AirStream Air Quality Monitoring – IEEE CONECCT 2024.</li>
-<li>Modified Boundary Scan Cell – MERCon 2025.</li>
-<li>Edge-Optimized Leaf Disease Detection – ICIIS 2026.</li>
-<li>Wi-Fi CSI Indoor Fire Detection – ICIIS 2026.</li>
-<li>AI Wireless Stethoscope for Asthma Detection – ICIIS 2026.</li>
-<li>Predictive Air Quality Monitoring System – ICARC 2026.</li>
-<li>GAN-Based Leaf Image Inpainting – 2025.</li>
-<li>Deep Learning for Diabetic Retinopathy – 2024.</li>
-</ul>
-
-<h3>Selected Abstract</h3>
-<ul>
-<li>Multimodal Signatures for Enhanced Lung Cancer Detection – CRUK Conference 2023.</li>
-</ul>
-
-</div>
-</section>
-
-<!-- Teaching & Supervision -->
-<section id="teaching" class="two">
-<div class="container">
-
-<h2>Teaching and Supervision</h2>
-
-<h3>University of Jaffna</h3>
-<ul>
-<li>Wireless and Mobile Communications</li>
-<li>Modern Mobile Communication Architecture and Applications</li>
-<li>Communication Network Design</li>
-<li>Optical Communication</li>
-<li>Introduction to Electronics and Instrumentation</li>
-<li>Electrical and Electronic Engineering Design Proficiency</li>
-</ul>
-
-<h3>University of Surrey</h3>
-<ul>
-<li>Tutor – Advanced Signal Processing</li>
-<li>Lab Demonstrator – Digital Logic, DSP, C++, Python Labs</li>
-<li>Co-supervised MSc Projects in AI & Medical Imaging</li>
-</ul>
-
-<h3>Visiting Lecturer</h3>
-<ul>
-<li>IoT & Embedded Systems – Uva Wellassa University</li>
-<li>IoT Section – Emerging Trends in Computer Science</li>
-<li>Network Application Design & HCI – University of Jaffna</li>
-</ul>
-
-</div>
-</section>
-
-<!-- Professional Engagement -->
-<section id="consulting" class="two">
-<div class="container">
-
-<h2>Other Professional Engagements</h2>
-
-<h3>Consulting and Advisory</h3>
-<ul>
-<li>AI & Digital Infrastructure Consultant – Asian Development Bank (2024–2026)</li>
-<li>BOI Infrastructure Consultant – National Investment Zones Feasibility Study</li>
-<li>Machine Learning Consultant – Senzmate (2020–2026)</li>
-</ul>
-
-<h3>Research Engagement</h3>
-<ul>
-<li>Research Associate – King’s College London (Multimodal Lung Cancer AI)</li>
-<li>Postgraduate Researcher – University of Surrey (COVID-19, Poultry Diagnostics, CONTENT4ALL)</li>
-</ul>
-
-<h3>Industry Roles</h3>
-<ul>
-<li>Specialist Software Engineer – London Stock Exchange Group</li>
-<li>Senior Software Engineer – London Stock Exchange Group</li>
-<li>Software Engineer – MillenniumIT (LSEG)</li>
-</ul>
-
-</div>
-</section>
-
-<!-- Leadership -->
-<section id="leadership" class="two">
-<div class="container">
-
-<h2>Administrative and Leadership Roles</h2>
-
-<ul>
-<li>Deputy Proctor – Faculty of Engineering</li>
-<li>Career Guidance Coordinator</li>
-<li>Coordinator – Renewable Energy Park</li>
-<li>Faculty Board Representative to Senate</li>
-<li>IESL Liaison Officer</li>
-<li>Coordinator – SLT, LECO & Industry MoUs</li>
-<li>Internal Quality Assurance Cell Member</li>
-<li>Academic Development & Planning Committee Member</li>
-</ul>
-
-<h3>Conferences and Events</h3>
-<ul>
-<li>Editor – International Conference on Engineering (2026)</li>
-<li>Finance Chair – Digital Technologies & Sustainable Agriculture Conference</li>
-<li>Co-chair – ICIAfS 2018</li>
-</ul>
-
-</div>
-</section>
-
-<!-- Grants & Awards -->
-<section id="grants" class="two">
-<div class="container">
-
-<h2>Grants and Awards</h2>
-
-<h3>Grants</h3>
-<ul>
-<li>ERASMUS+ ENSURE Project (NetZero Skills Development)</li>
-<li>NSF Grant – Portable Emission Measurement Device</li>
-<li>UBL Research Grants – AI & IoT Projects</li>
-</ul>
-
-<h3>Awards</h3>
-<ul>
-<li>University of Surrey PhD Studentship (CVSSP & Zoetis)</li>
-<li>Conception X DeepTech Scholarship</li>
-<li>MIT Hack4theFuture Winner</li>
-<li>McGinnis Venture Competition – Second Runner-up</li>
-<li>Dialog Merit Scholarship – District Rank 1</li>
-</ul>
-
-</div>
-</section>
-
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-photo">
+      <span class="hero-photo-placeholder">👤</span>
+    </div>
+    <div class="hero-info">
+      <div class="hero-dept">Faculty of Engineering · University of Jaffna</div>
+      <div class="hero-name">Dr. <strong>Tharmakulasingam</strong><br>Mukunthan</div>
+      <div class="hero-title">Senior Lecturer Grade II &nbsp;·&nbsp; Department of Electrical and Electronic Engineering</div>
+      <div class="hero-quals">B.Sc.Eng.(Hons)(Moratuwa) &nbsp;·&nbsp; PhD (Surrey, UK) &nbsp;·&nbsp; AMIE(SL) &nbsp;·&nbsp; MIEEE</div>
+      <div class="hero-tags">
+        <span class="hero-tag">Explainable AI</span>
+        <span class="hero-tag">Digital Health</span>
+        <span class="hero-tag">AIoT Intelligent Systems</span>
+        <span class="hero-tag">AI-Powered Energy Systems</span>
+      </div>
+      <div class="hero-contacts">
+        <a href="mailto:mukunthan@eng.jfn.ac.lk">✉ mukunthan@eng.jfn.ac.lk</a>
+        <a href="https://scholar.google.com" target="_blank">🎓 Google Scholar</a>
+        <a href="https://orcid.org" target="_blank">🔗 ORCID</a>
+      </div>
+    </div>
+  </div>
 </div>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/main.js"></script>
+<!-- TAB BAR -->
+<div class="tabs-bar">
+  <div class="tabs-inner">
+    <button class="tab-btn active" id="tab-brief" onclick="switchTab('brief')">Overview</button>
+    <button class="tab-btn" id="tab-publications" onclick="switchTab('publications')">Publications</button>
+    <button class="tab-btn" id="tab-teaching" onclick="switchTab('teaching')">Teaching</button>
+    <button class="tab-btn" id="tab-professional" onclick="switchTab('professional')">Professional</button>
+    <button class="tab-btn" id="tab-admin" onclick="switchTab('admin')">Leadership</button>
+    <button class="tab-btn" id="tab-grants" onclick="switchTab('grants')">Grants & Awards</button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- ── BRIEF ── -->
+  <div class="tab-panel active" id="panel-brief">
+    <div class="card">
+      <h2 class="section-heading" style="margin-top:0">Biography</h2>
+      <p style="font-size:0.95rem; margin-bottom: 16px;">Dr T. Mukunthan received his B.Sc.Eng(Hons) in Electronic and Telecommunication Engineering from the University of Moratuwa in 2014, and his PhD in Vision, Speech, and Signal Processing from the University of Surrey, United Kingdom in 2023. He is currently serving as a Senior Lecturer (Gr II) at the Department of Electrical and Electronic Engineering, Faculty of Engineering, University of Jaffna.</p>
+      <p style="font-size:0.95rem; margin-bottom: 16px;">His research lies at the intersection of Explainable Artificial Intelligence (XAI), AIoT, and intelligent systems, with a strong application focus on healthcare diagnostics, smart grids and renewable energy systems. His work emphasises trustworthy AI, data-driven decision-making, and digital transformation of critical infrastructure.</p>
+      <p style="font-size:0.95rem;">He has contributed as a consultant to several projects, including serving as an AI and Digital infrastructure consultant to the Asian Development Bank (ADB) on an AI-powered microgrid project. Before entering academia, he spent more than 4 years at the London Stock Exchange Group, working on a high-performance, low-latency exchange system, gaining strong expertise in scalable software architectures and real-time systems.</p>
+    </div>
+
+    <h2 class="section-heading">Research Interests</h2>
+    <div class="grid-2">
+      <div class="card" style="border-top: 3px solid var(--sky);">
+        <div style="font-size:1.6rem; margin-bottom:10px;">🔍</div>
+        <h3 style="font-size:1rem; color:var(--navy); margin-bottom:6px;">Explainable Artificial Intelligence (XAI)</h3>
+        <p style="font-size:0.85rem; color:var(--muted);">Trustworthy AI with interpretable models for critical decision-making in health and infrastructure.</p>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--sky);">
+        <div style="font-size:1.6rem; margin-bottom:10px;">🏥</div>
+        <h3 style="font-size:1rem; color:var(--navy); margin-bottom:6px;">Digital Health</h3>
+        <p style="font-size:0.85rem; color:var(--muted);">AI-assisted diagnostics, antimicrobial resistance prediction, point-of-care devices.</p>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--sky);">
+        <div style="font-size:1.6rem; margin-bottom:10px;">🌐</div>
+        <h3 style="font-size:1rem; color:var(--navy); margin-bottom:6px;">AI & IoT Intelligent Systems</h3>
+        <p style="font-size:0.85rem; color:var(--muted);">AIoT architectures for real-time sensing, edge AI, smart monitoring and automation.</p>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--sky);">
+        <div style="font-size:1.6rem; margin-bottom:10px;">⚡</div>
+        <h3 style="font-size:1rem; color:var(--navy); margin-bottom:6px;">AI-Powered Energy Systems</h3>
+        <p style="font-size:0.85rem; color:var(--muted);">Predictive load forecasting, renewable energy management, intelligent smart grid operations.</p>
+      </div>
+    </div>
+
+    <h2 class="section-heading">Career Timeline</h2>
+    <div class="card">
+      <div class="exp-row">
+        <div class="exp-date">2023 – Present</div>
+        <div class="exp-body">
+          <h4>Senior Lecturer Grade II</h4>
+          <p>Department of Electrical and Electronic Engineering, University of Jaffna, Sri Lanka</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2022 – 2023</div>
+        <div class="exp-body">
+          <h4>Research Associate</h4>
+          <p>Comprehensive Cancer Centre, King's College London, United Kingdom</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2019 – 2022</div>
+        <div class="exp-body">
+          <h4>Post Graduate Researcher (PhD)</h4>
+          <p>CVSSP, University of Surrey, United Kingdom</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2017 – 2018</div>
+        <div class="exp-body">
+          <h4>Specialist Software Engineer</h4>
+          <p>London Stock Exchange Group (MillenniumIT), Sri Lanka</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2016 – 2017</div>
+        <div class="exp-body">
+          <h4>Senior Software Engineer</h4>
+          <p>London Stock Exchange Group, Sri Lanka</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2014 – 2016</div>
+        <div class="exp-body">
+          <h4>Software Engineer</h4>
+          <p>MillenniumIT, London Stock Exchange Group, Sri Lanka</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PUBLICATIONS ── -->
+  <div class="tab-panel" id="panel-publications">
+
+    <div class="subsection-heading">📚 Book Chapter</div>
+    <div class="card">
+      <div class="pub-item">
+        <p class="pub-title">Digital Transformation for the Green Energy Transition in Sri Lanka</p>
+        <p class="pub-authors">G. Dilushan, Y. Pirunthapan, and <strong>M. Tharmakulasingam</strong></p>
+        <p class="pub-venue">Multidisciplinary Approaches for National Development in Sri Lanka through Advances in Science and Green Technology, YSF Thematic Publication 2026, p. 722</p>
+      </div>
+    </div>
+
+    <div class="subsection-heading">📄 Journal Articles</div>
+    <div class="card">
+      <div class="pub-item">
+        <p class="pub-title">Fusing data from CT deep learning, CT radiomics and peripheral blood immune profiles to diagnose lung cancer in a cohort of patients experiencing symptoms</p>
+        <p class="pub-authors">R. Mustapha, B. Ganeshan, S. Ellis, L. Dolcetti, <strong>M. Tharmakulasingam</strong>, et al.</p>
+        <p class="pub-venue">eBioMedicine, vol. 125, p. 106173, 2026</p>
+        <p class="pub-doi">doi: 10.1016/j.ebiom.2026.106173</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">TransAMR: An Interpretable Transformer Model for Accurate Prediction of Antimicrobial Resistance Using Antibiotic Administration Data</p>
+        <p class="pub-authors"><strong>M. Tharmakulasingam</strong>, W. Wang, M. Kerby, R. L. Ragione and A. Fernando</p>
+        <p class="pub-venue">IEEE Access, vol. 11, pp. 75337–75350, 2023</p>
+        <p class="pub-doi">doi: 10.1109/ACCESS.2023.3296221</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">Mapping the evidence of the effects of environmental factors on the prevalence of antibiotic resistance in the non-built environment</p>
+        <p class="pub-authors">I. Deza-Cruz, A. de Menezes, B. Gardner, [...] <strong>M. Tharmakulasingam</strong>, et al.</p>
+        <p class="pub-venue">Environment International, vol. 202, p. 109634, 2025</p>
+        <p class="pub-doi">doi: 10.1016/j.envint.2025.109634</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">An in silico drug repurposing pipeline to identify drugs with the potential to inhibit SARS-CoV-2 replication</p>
+        <p class="pub-authors">MacMahon M, Hwang W, Yim S, [...] <strong>Tharmakulasingam M</strong>, et al.</p>
+        <p class="pub-venue">Informatics in Medicine Unlocked, vol. 43, no. 101387, 2023</p>
+        <p class="pub-doi">doi: 10.1016/j.imu.2023.101387</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">Explainable deep learning approach for multilabel classification of antimicrobial resistance with missing labels</p>
+        <p class="pub-authors"><strong>M. Tharmakulasingam</strong>, B. Gardner, R. La Ragione and A. Fernando</p>
+        <p class="pub-venue">IEEE Access, vol. 10, pp. 113073–113085</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">Rectified Classifier Chains for Prediction of Antibiotic Resistance from Multi-labelled Data with Missing Labels</p>
+        <p class="pub-authors"><strong>M. Tharmakulasingam</strong>, B. Gardner, R. La Ragione and A. Fernando</p>
+        <p class="pub-venue">IEEE/ACM Transactions on Computational Biology and Bioinformatics, vol. 20, pp. 625–636</p>
+        <p class="pub-doi">doi: 10.1109/TCBB.2022.3148577</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">VIDIIA Hunter diagnostic platform: a low-cost, smartphone connected, artificial intelligence-assisted COVID-19 rapid diagnostics approved for medical use in the UK</p>
+        <p class="pub-authors">Poirier A.C, [...] <strong>Tharmakulasingam M</strong>, et al.</p>
+        <p class="pub-venue">Frontiers in Molecular Biosciences, 2023</p>
+        <p class="pub-doi">doi: 10.3389/fmolb.2023.1144001</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">An Artificial Intelligence-Assisted Portable Low-Cost Device for the Rapid Detection of SARS-CoV-2</p>
+        <p class="pub-authors"><strong>M. Tharmakulasingam</strong>, N.S. Chaudhry, M. Branavan, W. Balachandran, et al.</p>
+        <p class="pub-venue">Electronics, vol. 10, no. 17, 2021</p>
+        <p class="pub-doi">doi: 10.3390/electronics1017206</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">Artificial Intelligence-Assisted Loop Mediated Isothermal Amplification (ai-LAMP) for Rapid and Reliable Detection of SARS-CoV-2</p>
+        <p class="pub-authors">M.A. Rohaim, E. Clayton, [...] <strong>M. Tharmakulasingam</strong>, et al.</p>
+        <p class="pub-venue">Viruses, vol. 12, no. 9, 2020</p>
+        <p class="pub-doi">doi: 10.3390/v12090972</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">A blockchain-based database management system</p>
+        <p class="pub-authors">S. Jeyakumar, <strong>M. Tharmakulasingam</strong>, and V. Muthukkumarasamy</p>
+        <p class="pub-venue">The Knowledge Engineering Review, Cambridge University Press, vol. 35, p. e20, 2020</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">Mapping the evidence of the effects of environmental factors on the prevalence of antibiotic resistance in the non-built environment: Protocol for a systematic evidence map</p>
+        <p class="pub-authors">Gardner B., Betson M., [...] <strong>Tharmakulasingam, M.</strong>, et al.</p>
+        <p class="pub-venue">Environment International, 2022</p>
+        <p class="pub-doi">doi: 10.1016/j.envint.2022.107707</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">A Portable Remote Medical Consultation System for the Use of Distant Rural Communities</p>
+        <p class="pub-authors">S.P. Kumarawadu, N.D. Nanayakkara, B. Thavaneswaran, <strong>M. Tharmakulsingam</strong>, et al.</p>
+        <p class="pub-venue">Rajshahi University Journal of Science and Engineering, vol. 43, pp. 81–87, 2015</p>
+      </div>
+    </div>
+
+    <div class="subsection-heading">🎤 Selected Conference Papers</div>
+    <div class="card">
+      <div class="pub-item">
+        <p class="pub-title">A Lightweight Modular Pipeline for Edge-Optimized Leaf Disease Detection</p>
+        <p class="pub-authors">R. Radhakrishnan, M. A. Messiyas, and <strong>M. Tharmakulasingam</strong></p>
+        <p class="pub-venue">19th Int. Conf. Industrial and Information Systems (ICIIS), University of Peradeniya, Sri Lanka, Jan. 2026</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">Wi-Fi CSI Based Indoor Fire Detection System</p>
+        <p class="pub-authors">J. Weckasinghe, S. Thayaparan, and <strong>M. Tharmakulasingam</strong></p>
+        <p class="pub-venue">19th Int. Conf. Industrial and Information Systems (ICIIS), University of Peradeniya, Sri Lanka, Jan. 2026</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">AI Powered Wireless Stethoscope for Real-Time Asthma Detection</p>
+        <p class="pub-authors">M. Ravindran, D. Rasa Kumara, R. Krishnarajah, S. Gunaseelan, N. Sivapaskaran, and <strong>M. Tharmakulasingam</strong></p>
+        <p class="pub-venue">19th Int. Conf. Industrial and Information Systems (ICIIS), University of Peradeniya, Sri Lanka, Jan. 2026</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">Predictive Air Quality Monitoring System with Adaptive Sampling and 4G LTE</p>
+        <p class="pub-authors">S. Kogulshiyam, P. Whyshnavi, R. Yesindan, R. Valluvan, T. Thiruvaran, and <strong>T. Mukunthan</strong></p>
+        <p class="pub-venue">6th Int. Conf. Advanced Research in Computing (ICARC), Sabaragamuwa University of Sri Lanka, Feb. 2026</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">Modified Boundary Scan Cell for Faster Continuous Monitoring</p>
+        <p class="pub-authors">S. M. A. Hemal, S. Thayaparan and <strong>M. Tharmakulasingam</strong></p>
+        <p class="pub-venue">2025 Moratuwa Engineering Research Conference (MERCon), pp. 66–71</p>
+        <p class="pub-doi">doi: 10.1109/MERCon67903.2025.11217119</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">GAN-Based Leaf Image Inpainting for Occlusion Recovery</p>
+        <p class="pub-authors">R. Roycetheeban, A. M. Mathushanth, and <strong>M. Tharmakulasingam</strong></p>
+        <p class="pub-venue">2nd International Conference on Digital Technologies for Sustainable Agriculture, Kilinochchi, Sri Lanka, 2025</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">NB-AirStream: Advancing Air Quality Monitoring with LoRa and NB-IoT Integration</p>
+        <p class="pub-authors">R. Yesindan, S. Sangiya, R. Valluvan, <strong>T. Mukunthan</strong>, K. Ahilan, and M. Pravina</p>
+        <p class="pub-venue">2024 IEEE International Conference on Electronics, Computing and Communication Technologies (CONECCT)</p>
+        <p class="pub-doi">doi: 10.1109/CONECCT62155.2024.10677140</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">Deep Learning Models for Automatic Diabetic Retinopathy Diagnosis</p>
+        <p class="pub-authors">N. Rajendran and <strong>M. Tharmakulasingam</strong></p>
+        <p class="pub-venue">Int. Conf. Engineering, University of Jaffna, Sri Lanka, 2024</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">Backward Feature Elimination for Accurate Pathogen Recognition Using Portable Electronic Nose</p>
+        <p class="pub-authors"><strong>M. Tharmakulasingam</strong>, C. Topal, A. Fernando, and R. La Ragione</p>
+        <p class="pub-venue">2020 IEEE International Conference on Consumer Electronics (ICCE), pp. 1–5</p>
+        <p class="pub-doi">doi: 10.1109/ICCE46568.2020.9043043</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">Improved Pathogen Recognition using Non-Euclidean Distance Metrics and Weighted kNN</p>
+        <p class="pub-authors"><strong>M. Tharmakulasingam</strong>, C. Topal, A. Fernando, and R. La Ragione</p>
+        <p class="pub-venue">2019 6th International Conference on Biomedical and Bioinformatics Engineering, pp. 118–124</p>
+        <p class="pub-doi">doi: 10.1145/3375923.3375956</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-title">Blockchain-based Database Management System for IoT Applications Connected with Cloud</p>
+        <p class="pub-authors"><strong>M. Tharmakulasingam</strong>, S. Jeyakumar, and V. Muthukkumarasamy</p>
+        <p class="pub-venue">3rd Symposium on Distributed Ledger Technology, Griffith University, 2018</p>
+      </div>
+    </div>
+
+    <div class="subsection-heading">📋 Selected Abstract</div>
+    <div class="card">
+      <div class="pub-item">
+        <p class="pub-title">Multimodal Signatures for Enhanced Lung Cancer Detection and Interpretability</p>
+        <p class="pub-authors"><strong>M. Tharmakulasingam</strong>, R. Mustapha, B. Ganeshan, S. Ellis, L. Dolcetti, et al.</p>
+        <p class="pub-venue">The Early Detection of Cancer Conference, CRUK, 2023</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TEACHING ── -->
+  <div class="tab-panel" id="panel-teaching">
+
+    <h2 class="section-heading">University of Jaffna</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div class="subsection-heading" style="margin-top:0">Lecturing</div>
+        <ul class="styled-list">
+          <li>Wireless and Mobile Communications (2023–Present)</li>
+          <li>Modern Mobile Communication Architecture and Applications (2023–Present)</li>
+          <li>Communication Network Design (2025–Present)</li>
+          <li>Optical Communication (2018, 2025–Present)</li>
+          <li>Introduction to Electronics and Instrumentation (2018, 2025)</li>
+          <li>Electrical and Electronic Engineering Design Proficiency (2023–Present)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="subsection-heading" style="margin-top:0">Design & Project Coordination</div>
+        <ul class="styled-list">
+          <li>EEE Research Project I, II, III (2024–Present)</li>
+          <li>EEE Design Proficiency (2023–Present)</li>
+          <li>Design and Prototyping (2026)</li>
+          <li>Supervising AI and IoT-related undergraduate projects</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-heading">University of Surrey</h2>
+    <div class="card">
+      <div class="grid-2">
+        <div>
+          <div class="subsection-heading" style="margin-top:0">Tutor / Lab Demonstrator</div>
+          <ul class="styled-list">
+            <li>Advanced Signal Processing (Tutor)</li>
+            <li>Electronics Lab (Lab Demonstrator)</li>
+            <li>Level 2 Teambuilding Workshop</li>
+            <li>Computer and Digital Logic (Python Lab)</li>
+            <li>C++ and Object-Oriented Design</li>
+            <li>Fundamentals of Digital Signal Processing</li>
+          </ul>
+        </div>
+        <div>
+          <div class="subsection-heading" style="margin-top:0">Master Projects Co-supervised</div>
+          <ul class="styled-list">
+            <li>Transfer Learning for Diabetic Retinopathy Detection</li>
+            <li>Exploring BioBERT in the Generation of Radiology Reports from Chest X-Rays</li>
+            <li>Glaucoma Prediction Based on Retina Images</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-heading">Visiting Lectures</h2>
+    <div class="card">
+      <div class="exp-row">
+        <div class="exp-date">2025</div>
+        <div class="exp-body">
+          <h4>IoT and Embedded Systems</h4>
+          <p>Dept. of Information and Communication Technology, Uva Wellassa University of Sri Lanka</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2024–2025</div>
+        <div class="exp-body">
+          <h4>IoT in Emerging Trends in Computer Science</h4>
+          <p>Dept. of Computer Science, Faculty of Science, University of Jaffna</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2017</div>
+        <div class="exp-body">
+          <h4>Network Application Design, Human-Computer Interaction</h4>
+          <p>Dept. of Computer Engineering, Faculty of Engineering, University of Jaffna</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-heading">Other (Voluntary)</h2>
+    <div class="card">
+      <ul class="styled-list">
+        <li>Resource Person for free Data Science certificate course, UKI (2025)</li>
+        <li>Resource Person for free industrial AIoT Bootcamp by Senzmate – Generative AI and LLMs in Practice: From Theory to Applications (2024)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── PROFESSIONAL ── -->
+  <div class="tab-panel" id="panel-professional">
+
+    <h2 class="section-heading">Consulting & Advisory</h2>
+    <div class="card">
+      <div class="exp-row">
+        <div class="exp-date">2024–2026</div>
+        <div class="exp-body">
+          <h4>AI and Digital Infrastructure Consultant – Asian Development Bank (ADB)</h4>
+          <p>AI-Powered Smart Grid Pilot Implementation: AI-based grid control and market model in collaboration with LECO and three national Engineering Faculties. Focuses on predictive load forecasting, renewable energy management, and intelligent market operations.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">Sep 2025 – Feb 2026</div>
+        <div class="exp-body">
+          <h4>BOI Infrastructure Consultant</h4>
+          <p>Feasibility study on infrastructure readiness (power systems, water supply, road network) to support five new BOI investment zones: Paranthan, Mankulam, Kankesanthurai, Trincomalee, and Iranavila.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2020–2026</div>
+        <div class="exp-body">
+          <h4>Machine Learning Consultant – Senzmate</h4>
+          <p>AI models for predictive maintenance, vegetable price forecasting, anomaly detection in warehouses, and GAN-based hair restyle projects.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-heading">Research Engagement</h2>
+    <div class="card">
+      <div class="exp-row">
+        <div class="exp-date">Sep 2022 – Jun 2023</div>
+        <div class="exp-body">
+          <h4>Research Associate – Comprehensive Cancer Centre, King's College London</h4>
+          <p>Developed multimodal data analysis to detect lung cancer using exosomes, radiomics, and immune data.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">Feb 2019 – Sep 2022</div>
+        <div class="exp-body">
+          <h4>Post Graduate Researcher (PhD) – CVSSP, University of Surrey</h4>
+          <p>Collaborated on AI-Assisted Portable Device for SARS-CoV-2 detection (Lancaster, Brunel, Vidiia); Low-Cost Portable Molecular Diagnostic Platform for Poultry Pathogens (LMDP); CONTENT4ALL project for sign language broadcasting.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-heading">Industry Roles</h2>
+    <div class="card">
+      <div class="exp-row">
+        <div class="exp-date">Apr 2017 – Apr 2018</div>
+        <div class="exp-body">
+          <h4>Specialist Software Engineer – London Stock Exchange Group</h4>
+          <p>C++, Agile, Python, Oracle DB, OOP, Design Patterns, Performance Improvement, Fault Tolerance, Behaviour-driven development.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">Apr 2016 – Mar 2017</div>
+        <div class="exp-body">
+          <h4>Senior Software Engineer – London Stock Exchange Group</h4>
+          <p>C++, Python, PL/SQL, JAVA, Oracle DB, FIX Protocol, Design Patterns, Fault Tolerance.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">Apr 2014 – Mar 2016</div>
+        <div class="exp-body">
+          <h4>Software Engineer – MillenniumIT, London Stock Exchange Group</h4>
+          <p>C++, Perl scripting, PL/SQL, Oracle DB, Java, OOP, FIX to FPML test tool development.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ADMIN ── -->
+  <div class="tab-panel" id="panel-admin">
+
+    <h2 class="section-heading">University of Jaffna – Administrative Roles</h2>
+    <div class="card">
+      <ul class="styled-list">
+        <li>Deputy Proctor, Faculty of Engineering (2023 Aug – Present)</li>
+        <li>Career Guidance Coordinator, Faculty of Engineering (Dec 2024 – Present)</li>
+        <li>Coordinator, Renewable Energy Park, University of Jaffna (2024 Aug – Present)</li>
+        <li>Member, Sports Advisory Board, University of Jaffna (Feb 2025 – Present)</li>
+        <li>Faculty Board Representative to the Senate (Jan 2024 – Present)</li>
+        <li>Member, Social Reconciliation Centre (SRC) (2025 Aug – Present)</li>
+        <li>IESL Liaison Officer, Faculty of Engineering (2025 – Present)</li>
+        <li>Coordinator, SLT–University of Jaffna MoU and Collaboration (2023 Aug – 2024 Dec)</li>
+        <li>Coordinator, LECO–University of Jaffna MoU and Collaboration (2024 – Present)</li>
+        <li>Coordinator, Mindox–University of Jaffna MoU and Collaboration (2025 – Present)</li>
+        <li>Senior Treasurer, Electrical and Electronic Engineering Society (EEES) (2024 Aug – Present)</li>
+        <li>Internal Quality Assurance Cell member, Faculty of Engineering (Jul 2023 – Present)</li>
+        <li>Academic Development and Planning Committee (ADPC) member, Faculty of Engineering (Aug 2025 – Present)</li>
+      </ul>
+    </div>
+
+    <h2 class="section-heading">Conferences & Events</h2>
+    <div class="card">
+      <ul class="styled-list">
+        <li>Editor, International Conference on Engineering, University of Jaffna, 2026</li>
+        <li>Coordinator, Faculty of Engineering Career Fair (2025)</li>
+        <li>Advisory Committee member, IEEE ComSoc Summer School Series, University of Jaffna (August 2025)</li>
+        <li>Coordinator, Faculty Orientation Programme for new intake (2024)</li>
+        <li>Finance Chair, 2nd International Conference on Digital Technologies and Sustainable Agriculture (May 2025)</li>
+        <li>Program Leader, Shaping Futures Conference, Doctoral College, University of Surrey (Jun 2021)</li>
+        <li>Co-chair, Local Organising Committee, 9th ICIAfS International Conference (Dec 2018)</li>
+      </ul>
+    </div>
+
+    <h2 class="section-heading">Other Leadership</h2>
+    <div class="card">
+      <ul class="styled-list">
+        <li>Students/Young Professionals Activities Coordinator, IEEE Signal Processing Society (SPS) Sri Lanka Section (2024 Jan – 2024 Dec)</li>
+        <li>Lead Ambassador, IEEE R10 Adhoc Committee on Entrepreneurship and Innovation – Sri Lanka Section (2024)</li>
+        <li>Reviewer: IEEE Journal of Biomedical and Health Informatics, IEEE Access, IET Biometrics Journal</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── GRANTS ── -->
+  <div class="tab-panel" id="panel-grants">
+
+    <h2 class="section-heading">Research Grants</h2>
+
+    <div class="award-card">
+      <h4>ERASMUS+ Grant – ENSURE Project <span class="badge badge-blue">EUR 61,579</span></h4>
+      <p>Project Coordinator for "Empowering NetZero Skills for Sri Lanka's Sustainable and Resilient Future (ENSURE)" in collaboration with seven national institutions and four international universities. Dec 2025 – Dec 2027.</p>
+    </div>
+
+    <div class="award-card">
+      <h4>NSF Grant – Portable Emission Measurement Device <span class="badge badge-blue">LKR 4.8 Million</span></h4>
+      <p>Co-PI for development of a portable emission measurement device. Jan 2026 – Dec 2026.</p>
+    </div>
+
+    <div class="award-card">
+      <h4>UBL Research Grant – IoT Footfall & Facial Recognition (RDC/AHEAD/RA3/JFN/UBL/CA/25) <span class="badge badge-blue">LKR 500,000</span></h4>
+      <p>IoT-powered footfall and advanced facial recognition system with edge-AI deployment and prototype validation.</p>
+    </div>
+
+    <div class="award-card">
+      <h4>UBL Research Grant – Explainable AI for Disease Prediction (RDC/AHEAD/RA3/JFN/UBL/CA/14) <span class="badge badge-blue">LKR 400,000</span></h4>
+      <p>Explainable AI framework for disease prediction with advanced model interpretability techniques.</p>
+    </div>
+
+    <h2 class="section-heading">Awards & Recognition</h2>
+
+    <div class="subsection-heading">Individual</div>
+
+    <div class="award-card">
+      <h4>University of Surrey Studentship: CVSSP & Zoetis <span class="badge badge-gold">Full Scholarship</span></h4>
+      <p>Successfully secured a full scholarship with tuition fee and stipend to carry out PhD based on proposal. Jan 2019 – Mar 2022.</p>
+    </div>
+
+    <div class="award-card">
+      <h4>Scholarship – Conception X Program <span class="badge badge-gold">Scholarship</span></h4>
+      <p>Competitive deep-tech entrepreneurship program from leading UK PhD programs. Validated AI-based disease prediction tools, conducted market analysis, and developed startup business models. Mar 2022 – Nov 2022.</p>
+    </div>
+
+    <div class="award-card">
+      <h4>Dialog Merit Scholarship for Academic Excellence <span class="badge badge-gold">1st in Jaffna District</span></h4>
+      <p>Ranked 1st in Jaffna District for GCE Advanced Level Mathematics Stream 2008. August 2009.</p>
+    </div>
+
+    <div class="award-card">
+      <h4>University Honours for Athletics – SLUG 2013</h4>
+      <p>Represented the University of Moratuwa in Javelin Throw at SLUG-2013, where the university emerged as the overall champion.</p>
+    </div>
+
+    <div class="subsection-heading">Project Team Awards</div>
+
+    <div class="award-card">
+      <h4>Winner – MIT Hack4theFuture (AI & Future of Healthcare track) <span class="badge badge-gold">Winner</span></h4>
+      <p>Diabetic Retinopathy prediction product for personalised home diagnosis was selected as the winner. Nov 2020.</p>
+    </div>
+
+    <div class="award-card">
+      <h4>Second Runner-up – McGinnis Venture Competition <span class="badge badge-gold">2nd Runner-up</span></h4>
+      <p>E-carebetics prototype for predicting Retinopathy using XAI model, mobile app, and easy-to-build fundus camera with innovative illumination. Mar 2022.</p>
+    </div>
+
+    <div class="subsection-heading">Supervised Student Awards</div>
+
+    <div class="award-card">
+      <h4>IoT System for Indoor Air Quality Monitoring <span class="badge badge-gold">1st Place</span></h4>
+      <p>First place in the IEEE IAS Undergraduate Student Design Contest.</p>
+    </div>
+
+    <div class="award-card">
+      <h4>Intelligent Dental Care Kit <span class="badge badge-gold">Bronze</span></h4>
+      <p>Bronze medal at the IEEE R10 HTC 2024 Innovation Challenge.</p>
+    </div>
+
+    <div class="award-card">
+      <h4>AIoT Driven Green House Monitoring and Predictive Analysis</h4>
+      <p>Selected to showcase in the Sri Lankan AI Expo under the University Category.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>Dr. Tharmakulasingam Mukunthan &nbsp;·&nbsp; Department of Electrical and Electronic Engineering, Faculty of Engineering, University of Jaffna</p>
+  <p style="margin-top:6px;"><a href="mailto:mukunthan@eng.jfn.ac.lk">mukunthan@eng.jfn.ac.lk</a> &nbsp;·&nbsp; <a href="https://www.eng.jfn.ac.lk" target="_blank">www.eng.jfn.ac.lk</a></p>
+</footer>
+
+<script>
+  function switchTab(name) {
+    // Hide all panels and deactivate buttons
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+
+    // Show selected
+    document.getElementById('panel-' + name).classList.add('active');
+    document.getElementById('tab-' + name).classList.add('active');
+    const navEl = document.getElementById('nav-' + name);
+    if (navEl) navEl.classList.add('active');
+
+    // Smooth scroll to top of main
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+</script>
 
 </body>
 </html>
