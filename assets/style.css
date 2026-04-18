@@ -374,3 +374,91 @@ footer a { color: rgba(255,255,255,0.7); }
   .exp-date { width: 90px; font-size: 0.72rem; }
   .grid-2 { grid-template-columns: 1fr; }
 }
+
+/* ── TIMELINE ── */
+.timeline-wrap { margin-bottom: 8px; }
+.tl-row {
+  display: grid;
+  grid-template-columns: 1fr 72px 1fr;
+  align-items: start;
+  margin-bottom: 0;
+}
+.tl-side { padding: 8px 0; }
+.tl-left { display: flex; justify-content: flex-end; padding-right: 14px; }
+.tl-right { padding-left: 14px; }
+.tl-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 8px;
+}
+.tl-center::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: -8px;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--sky), var(--border));
+  transform: translateX(-50%);
+  z-index: 0;
+}
+.tl-row:last-child .tl-center::before {
+  background: linear-gradient(to bottom, var(--border), transparent);
+}
+.tl-dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--sky);
+  border: 2.5px solid var(--light);
+  z-index: 1;
+  flex-shrink: 0;
+}
+.tl-dot-muted { background: var(--muted); }
+.tl-date {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--sky);
+  text-align: center;
+  line-height: 1.25;
+  margin-top: 4px;
+  z-index: 1;
+  letter-spacing: 0.02em;
+}
+.tl-muted { color: var(--muted) !important; }
+.tl-card {
+  background: var(--white);
+  border-radius: var(--border-radius, 8px);
+  border: 1px solid var(--border);
+  padding: 10px 13px;
+  max-width: 220px;
+}
+.tl-card-muted { opacity: 0.6; }
+.tl-tag {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 4px;
+}
+.tl-card h4 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 3px;
+}
+.tl-card p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+@media (max-width: 600px) {
+  .tl-row { grid-template-columns: 1fr 56px 1fr; }
+  .tl-left { padding-right: 8px; }
+  .tl-right { padding-left: 8px; }
+  .tl-card { max-width: 140px; }
+  .tl-card h4 { font-size: 0.72rem; }
+  .tl-card p { font-size: 0.68rem; }
+}
