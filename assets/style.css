@@ -368,7 +368,7 @@ footer a { color: rgba(255,255,255,0.7); }
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .hero-inner { flex-direction: column; align-items: flex-start; }
-  .hero-photo img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%;; }
+  .hero-photo img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; }
   .hero-name { font-size: 2rem; }
   .nav-links { display: none; }
   .exp-date { width: 90px; font-size: 0.72rem; }
